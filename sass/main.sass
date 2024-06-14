@@ -9,24 +9,46 @@
 
 html
 	overflow-x: hidden
-	zoom: 90%
 
 body
-	background: radial-gradient(33.21% 70.35% at 66.67% 25.52%, #60C6F3 11.86%, #17A4DE 100%)
 	font-family: var(--font-family-primary)
 	scroll-behavior: smooth
 	-webkit-font-smoothing: antialiased
 	overflow-x: hidden
 
+	height: 2500px
+
 @mixin element_animation
 	transition-timing-function: ease-in-out
-	transition-duration: 0.3s
+	transition-duration: 0.2s
+
+::-webkit-scrollbar 
+	width: 6px
+	border-radius: 2px
+	height: 0
+
+
+::-webkit-scrollbar-track 
+	background: rgba(128, 128, 128, 0.25)
+
+::-webkit-scrollbar-thumb 
+	background: #e5e5f8
+	border-radius: 10px
+
+
+::-webkit-scrollbar-thumb:hover 
+	background: #cccce7
+
+
 
 /* BASE STYLE SETTINGS END. */
 
 
 
 /* WRAPPER STYLE SETTINGS START: */
+
+.wrapper-body
+	background-color: var(--color-black)
 
 .wrapper-full
 	width: 100%
@@ -36,13 +58,7 @@ body
 .wrapper-fix
 	width: 100%
 	margin: 0px auto
-	padding: 0px 20px
-
-	&.wrapper-small
-		max-width: 1055px
-
-	&.wrapper-middle
-		max-width: 1260px
+	padding: 0px 70px
 
 /* WRAPPER STYLE SETTINGS END. */
 
@@ -51,1140 +67,291 @@ body
 /* UI STYLE SETTINGS START: */
 
 /* Buttons style settings start: */
-
-.button
-	text-decoration: none
-	display: inline-block
-	font-weight: 600
-
-	&__outlined
-		border: 1px solid var(--color-blue-dark)
-		border-radius: 23.5px
-
 /* Buttons style settings end. */
 
 
 /* Titles style settings start: */
-
-h2.title
-	font-size: 45px
-	line-height: 45px
-	font-weight: 800
-	font-style: italic
-	color: var(--font-color-primary)
-	text-transform: uppercase
-
-	position: relative
-	z-index: 4
-
-h3.title
-	font-size: 40px
-	line-height: 49px
-	font-weight: 800
-	font-style: italic
-	color: var(--font-color-primary)
-	text-transform: uppercase
-
-	position: relative
-	z-index: 4
-
 /* Titles style settings end. */
 
 
 /* UI STYLE SETTINGS END. */
 
 
+@keyframes animation-opacity
+	0% 
+		opacity: 0
+	100%
+		opacity: 100%
 
-/* HEADER STYLE SETTINGS START: */
+.container-header
+	display: flex
+	flex-direction: column
+	row-gap: 160px
 
-.section-header
-	position: relative
+	.container-header__row-01
+		width: 100%
+		position: relative
+		margin: 0px 0px 90px 0px
 
-	& > .decorations
-		.decoration_01
+		animation-duration: 1s
+		animation-delay: 1.75s
+		animation-timing-function: ease
+		animation-name: animation-opacity
+		animation-direction: normal
+		animation-fill-mode: both
+		animation-iteration-count: 1
+
+		.container-header__fixed-menu
 			width: 100%
-			height: 85px
-			
-			background-image: url('../media/decoration_01.svg')
-			background-repeat: repeat-x
-			background-size: contain
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 30px 70px
 
-			position: absolute
-			left: 0px
-			bottom: -75px
-
-			filter: drop-shadow(2px 16px 6px rgba(0, 0, 0, 0.25))
-
-		.decoration_02
-			position: absolute
+			position: fixed
 			left: 0px
 			top: 0px
-			z-index: 1
+			z-index: 1000
 
-	.container-navigation
-		width: 100%
-		display: flex
-		justify-content: space-between
-		align-items: center
-		position: relative
-		z-index: 3
+			mix-blend-mode: difference
 
-		padding: 20px 0px
-
-		.container-navigation_column-01
-			display: flex
-			align-items: center
-			column-gap: 60px
-
-			.navigation-logotype
-				text-decoration: none
-
-			.navigation-menu
+			.container-header__fixed-menu-navigation
 				ul
-					display: flex
-					column-gap: 20px
 					list-style-type: none
+					display: flex
+					column-gap: 45px
+
+					&:hover
+						li
+							a
+								opacity: 0.4
 
 					li
 						a
-							text-decoration: none
 							color: var(--font-color-secondary)
-							font-size: 15px
-							line-height: 18px
-							font-weight: 600
-							padding: 5px 5px
+							filter: invert(100%)
+							font-size: 20px
+							font-weight: 500
+							text-decoration: none
+							@include element_animation
 
 							&:hover
-								text-decoration: underline
+								opacity: 1
 
-		.container-navigation_column-02
-			display: flex
-			align-items: center
-			column-gap: 60px
-
-			.button
-				color: var(--font-color-secondary)
-				font-size: 15px
-				line-height: 18px
-				padding: 14px 25px
-
-				@include element_animation
-				box-shadow: 3px 3px 0px 0px var(--color-blue-dark)
-
-				&:hover
-					box-shadow: 5px 5px 0px 0px var(--color-blue-dark)
-
-	.container-header
-		width: 100%
-		display: flex
-		justify-content: space-between
-		align-items: flex-start
-		margin: 120px 0px 0px 0px
-
-		.container-header_column-01
-			width: 60%
-			height: auto
-			display: flex
-			flex-direction: column
-			row-gap: 15px
-			position: relative
-
-			h1, h2
-				position: relative
-				z-index: 2
-
-			.image
-				width: 100%
-				max-width: 420px
-				position: relative
-				left: -55px
-				display: inline-block
-				margin: 20px 0px 0px 0px
-
-			& > .decorations
-				.decoration_01
-					position: absolute
-					right: -5%
-					bottom: -40%
-
-				.decoration_02
-					position: absolute
-					left: -25%
-					bottom: -42.5%
-
-
-		.container-header_column-02
-			width: 40%
-			height: 100%
-			display: flex
-			flex-direction: column
-			row-gap: 15px
-			position: relative
-			z-index: 1
-
-			.image
-				position: absolute
-				left: 50%
-				top: 50%
-				transform: translate(-50%, -35%) scale(0.7)
-				z-index: 2
-
-	.container-notes
-		width: 100%
-		display: flex
-		justify-content: space-between
-		position: relative
-
-		.container-notes_column-01,
-		.container-notes_column-02
-			width: 50%
-			position: relative
-			display: flex
-
-
-			.block-notes
-				display: block
-				position: relative
-
-				img
-					width: 100%
-
-				&.block-01
-					width: 360px
-					height: 360px
-
-					position: absolute
-					top: 140px
-					left: -60%
-					z-index: 1
-
-				&.block-02
-					width: 360px
-					height: 360px
-
-					position: absolute
-					top: 0px
-					left: -50px
-					z-index: 2
-					transform: rotate(7.5deg)
-
-				&.block-03
-					width: 310px
-					height: 310px
-
-					position: absolute
-					top: 95px
-					left: 255px
-					z-index: 3
-					transform: rotate(-14deg)
-
-/* HEADER STYLE SETTINGS END. */
-
-
-
-/* WRAPPER DECORATION STYLE SETTINGS START: */
-
-.wrapper-decoration
-	width: 100%
-	background-image: url('../media/background_01.svg')
-	background-repeat: no-repeat
-	background-size: cover
-
-/* WRAPPER DECORATION STYLE SETTINGS END. */
-
-
-
-/* GAME SECTIONS STYLE SETTINGS START: */
-
-.section-game
-	width: 100%
-
-	.container-game
-		display: flex
-		justify-content: space-between
-		align-items: center
-		position: relative
-
-		.container-game_column-01
-			width: 40%
-
-			img
-				max-width: 295px
-				position: relative
-				left: -80px
-
-		.container-game_column-02
-			width: 60%
-
-			& > p
-				font-size: 24px
-				line-height: 32px
-				font-weight: 700
-				color: var(--font-color-primary)
-				margin: 10px 0px
-
-			.game-caption_block
-				margin: 45px 0px
-
-				.game-caption_block-item
-					display: grid
-					grid-template-columns: 180px auto 1fr
-					align-items: center
-
-					margin: 20px 0px
-
-					.image
-						width: 100%
-						display: flex
-						max-width: 180px
-
-						img
-							max-width: max-content
-							max-height: 52px
-
-					span
-						margin: 0px 25px 0px 15px
-
-					p
-						font-size: 17px
-						line-height: 23px
-						font-weight: 600
-						color: var(--font-color-primary)
-
-			.game-action_block
-				& > div
-					width: 300px
-					display: flex
-					flex-direction: column
-					align-items: center
-					row-gap: 10px
-
-
-				.button
-					display: inline-block
-					&.filled
-						width: 100%
-						max-width: 300px
-
-						text-align: center
-						font-size: 26px
-						line-height: 42px
-						font-weight: 800
-						font-style: italic
-						color: var(--font-color-secondary)
-
-						border-radius: 35px
-						background-color: var(--color-yellow)
-						padding: 10px 10px
-
-					&.link
-						font-style: italic
-						font-size: 12px
-						color: var(--font-color-primary)
-
-						&:hover
-							text-decoration: underline
-
-/* GAME SECTIONS STYLE SETTINGS END. */
-
-
-
-/* PRESENT SECTIONS STYLE SETTINGS START: */
-
-.section-present
-	position: relative
-	// background-image: url('../media/background_02.svg')
-	// background-repeat: no-repeat
-	// background-size: contain
-	// background-position: left
-
-
-	// & > .decorations
-	// 	.decoration_01
-	// 		width: 120%
-	// 		height: 65px
-			
-	// 		background-image: url('../media/decoration_01.svg')
-	// 		background-repeat: repeat-x
-	// 		background-size: contain
-
-	// 		position: absolute
-	// 		left: -20px
-	// 		top: 20%
-	// 		z-index: 2
-
-	// 		filter: drop-shadow(2px 16px 6px rgba(0, 0, 0, 0.25))
-	// 		transform: rotate(9deg)
-
-	// 	.decoration_02
-	// 		position: absolute
-	// 		left: 0px
-	// 		top: 0px
-	// 		z-index: 1
-
-.container-present
-	.present-block
-		width: 100%
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-		margin: 55px 0px 0px 0px
-
-		.present-block_item
-			width: 280px
-			background-color: var(--color-blue-dark)
-			border-radius: 50px
-			padding: 35px 20px 25px 20px
-			position: relative
-
-			.caption
-				margin: 0px 0px 25px 0px
-
-				div
-					display: flex
-					column-gap: 4px
-
-					img
-						max-width: 25px
-						height: auto
-
-					span
-						font-size: 32px
-						line-height: 49px
-						font-weight: 800
-						font-style: italic
-						color: var(--font-color-primary)
-
-				p
-					font-size: 20px
-					line-height: 22px
-					font-weight: 800
-					font-style: italic
-					color: var(--font-color-primary)
-
-			a
-				position: relative
-				left: -30px
-				z-index: 10
-
-				text-decoration: none
-				text-align: center
-				font-size: 20px
-				line-height: 16px
-				font-weight: 800
-				font-style: italic
-				color: var(--font-color-primary)
-
-				display: inline-block
-				background-color: var(--color-pink)
-				border-radius: 40px
-				padding: 10px 12px
-
-			.image
-				position: absolute
-				
-
-				&.image-01
-					width: 165px
-					top: 40px
-					right: -35px
-
-				&.image-02
-					width: 135px
-					top: -5px
-					right: -5px
-
-				&.image-03
-					width: 170px
-					top: -30px
-					right: -18.5px
-
-				img
-					width: 100%
-
-			.decoration
-				max-width: 60px
-				position: absolute
-				top: -20px
-				right: -20px
-				z-index: 10
-
-				img
-					width: 100%
-
-
-/* PRESENT SECTIONS STYLE SETTINGS END. */
-
-
-
-/* TABLE SECTIONS STYLE SETTINGS START: */
-
-.section-table
-	.container-table
-		width: 100%
-		display: flex
-		justify-content: center
-
-		.table-block
-			width: 100%
-			padding: 15px 0px
-
-			&.fix-width
-				max-width: 830px
-
-			.table-head
-				width: 100%
-				height: auto
+			.container-header__fixed-menu-links
 				display: flex
-				justify-content: space-between
 				align-items: center
-				column-gap: 30px
-
-				h2.title
-					width: auto
-
-				.table-form
-					flex: 1
-
-					.input-search
-						width: 100%
-						height: auto
-						border-radius: 0px 16px 0px 0px
-						background: #FEFBFB
-						border: none
-						outline: none
-
-						text-align: center
-						font-size: 14px
-						line-height: 16px
-						padding: 13px 15px
-
-						position: relative
-						background-image: url('../media/icons/search.svg')
-						background-repeat: no-repeat
-						background-size: 22px
-						background-position: right 18px center
-
-						&::placeholder
-							font-family: var(--font-family-primary)
-							color: #898993
-							font-size: 14px
-							line-height: 16px
-
-			.table-body
-				display: flex
-				flex-direction: column
-				row-gap: 2px
-
-				margin: 30px 0px 30px 0px
-
-				.table-tabs-buttons
-					width: 100%
-					display: flex
-					column-gap: 16px
-
-					.tab-button
-						display: inline-block
-						width: 50%
-
-						border-radius: 0px 16px 0px 0px
-						background-color: var(--color-white)
-
-						text-decoration: none
-						text-align: center
-						font-size: 20px
-						line-height: 16px
-						font-weight: 800
-						font-style: italic
-						color: var(--font-color-secondary)
-						padding: 20px 10px
-
-						&.active
-							background-color: var(--color-blue-dark)
-							color: var(--font-color-primary)
-
-				.table-tabs-content
-					.table-block__content
-						display: flex
-						flex-direction: column
-						row-gap: 4px
-
-						.row 
-							width: 100%
-							min-height: 40px
-							display: flex
-							justify-content: space-between
-							align-items: center
-							padding: 12px 10px
-
-							& > div
-								display: flex
-								align-items: center
-								justify-content: center
-								flex: 1
-
-								p
-									font-weight: 600
-									font-size: 14px
-									line-height: 16px
-									color: var(--font-color-secondary)
-
-						.table-block__title
-							.row
-								background-color: var(--color-blue-dark)
-
-								& > div
-									p
-										text-align: center
-										font-weight: 800
-										font-style: italic
-										color: var(--font-color-primary)
-
-						.table-block__rows
-							display: flex
-							flex-direction: column
-							row-gap: 2px
-
-							.row
-								&:nth-child(odd)
-									background-color: #49A3DB
-								&:nth-child(even)
-									background-color: rgba(96, 198, 243, 0.74)
-
-			.table-footer
-				display: flex
-
-				&.left-align
-					justify-content: flex-start
-
-				&.center-align
-					justify-content: center
-
-				&.right-align
-					justify-content: flex-end
-
-				& > div
-					display: flex
-					justify-content: center
-					align-items: center
-					column-gap: 8px
-
-					.button
-						display: inline-block
-						width: auto
-						height: auto
-						background-color: transparent
-						border: none
-						outline: none
-						padding: 5px 5px
-						cursor: pointer
-
-					span
-						font-size: 14px
-						font-weight: 800
-						font-style: italic
-						color: var(--font-color-primary)
-
-						&.active
-							font-size: 24px
-							color: var(--font-color-secondary)
-
-/* TABLE SECTIONS STYLE SETTINGS END. */
-
-
-
-/* LOGOTYPE SECTIONS STYLE SETTINGS START: */
-
-.section-logotype
-	.container-logotype
-		margin: 100px 0px 0px 0px
-
-		.container-logotype__row-01
-			display: flex
-			justify-content: center
-			align-items: center
-			margin: 0px 0px 60px 0px
-
-		.container-logotype__row-02
-			width: 100%
-			background-color: var(--color-white)
-			position: relative
-
-			& > .decorations
-				.decoration_01
-					width: 100%
-					height: 85px
-					
-					background-image: url('../media/decoration_01.svg')
-					background-repeat: repeat-x
-					background-size: contain
-
-					position: absolute
-					left: 0px
-					top: -20px
-					z-index: -1
-
-					filter: drop-shadow(2px 16px 6px rgba(0, 0, 0, 0.25))
-
-.wrapper-logotype
-	.wrapper-logotype__container
-		width: 100%
-		display: flex
-		justify-content: space-around
-		align-items: center
-		padding: 60px 0px 115px 0px
-
-		position: relative
-		z-index: 2
-
-		.block-logotype
-			width: 330px
-			height: 110px
-			border-radius: 15px
-			background-color: var(--color-white)
-			@include element_animation
-
-			display: flex
-			justify-content: center
-			align-items: center
-			padding: 20px 20px
-
-			text-decoration: none
-
-			img
-				height: 40px
-				width: auto
-
-			&:hover
-				box-shadow: 7px 18px 30.4px -1px rgba(0, 0, 0, 0.15)
-
-
-
-/* LOGOTYPE SECTIONS STYLE SETTINGS END. */
-
-
-
-/* QUESTIONS SECTIONS STYLE SETTINGS START: */
-
-.section-questions
-	position: relative
-	background-color: var(--color-blue-dark)
-	background-image: url('../media/questions_decoration.svg')
-	background-repeat: no-repeat
-	background-size: 30%
-	background-position: right bottom
-
-	.container-questions
-		display: flex
-		flex-direction: column
-		align-items: center
-
-		.block-questions
-			width: 100%
-			display: flex
-			justify-content: space-between
-			align-items: flex-start
-			margin: 50px 0px 0px 0px
-
-			.block-questions__column-01
-				width: 65%
-				position: relative
-
-			.block-questions__column-02
-				height: 35%
-				position: relative
-
-.questions-accordeons
-	width: 100%
-	display: flex
-	flex-direction: column
-	row-gap: 25px
-
-	.question-item
-		width: 100%
-
-		p
-			display: none
-			font-size: 20px
-			line-height: 22px
-			margin: 20px 0px 0px 0px
-			
-			color: var(--font-color-primary)
-
-		.question-title
-			display: flex
-			align-items: center
-			justify-content: space-between
-			cursor: pointer
-			column-gap: 30px
-
-			h4
-				font-size: 26px
-				line-height: 30px
-				font-weight: 800
-				font-style: italic
-				color: var(--font-color-primary)
-
-
-			.active-image 
-				transition: 0.2s
-				transform: rotate(180deg)
-
-.question-form
-	width: 420px
-	height: 420px
-	border-radius: 50%
-	background-color: var(--color-blue-light)
-	display: flex
-	flex-direction: column
-	justify-content: center
-	align-items: center
-	row-gap: 20px
-	padding: 80px 80px
-
-	position: relative
-	left: 70px
-
-	img
-		width: 100%
-		max-width: 90px
-
-	p
-		text-align: center
-		font-size: 24px
-		line-height: 32px
-		font-weight: 800
-		font-style: italic
-		color: var(--font-color-primary)
-
-	a
-		text-decoration: none
-		text-align: center
-		font-size: 20px
-		line-height: 16px
-		font-weight: 800
-		font-style: italic
-		color: var(--font-color-primary)
-
-		display: inline-block
-		background-color: var(--color-pink)
-		border-radius: 40px
-		padding: 11px 30px
-
-
-/* QUESTIONS SECTIONS STYLE SETTINGS END. */
-
-
-
-/* FOOTER SECTIONS STYLE SETTINGS START: */
-
-.section-footer
-	background-color: #009ADC
-
-	.container-footer
-		display: flex
-		align-items: center
-		column-gap: 40px
-
-		.container-footer__column-01
-			width: 250px
-
-			img
-				width: 100%
-
-		.container-footer__column-02
-			flex: 1
-
-			h4
-				font-size: 18px
-				line-height: 24px
-				font-weight: 800
-				font-style: italic
-				color: var(--font-color-secondary)
-
-			p
-				font-size: 16px
-				line-height: 24px
-				font-weight: 700
-				font-style: italic
-				color: var(--font-color-secondary)
-
-/* FOOTER SECTIONS STYLE SETTINGS END. */
-
-
-
-/* PROFILE SECTIONS STYLE SETTINGS START: */
-
-.wrapper-profile
-	.container-profile
-		margin: 70px 0px 0px 0px
-
-		.title
-			color: var(--font-color-secondary)
-
-		.block-profile
-			width: 100%
-			display: flex
-			justify-content: space-between
-			align-items: center
-			column-gap: 27px
-			margin: 35px 0px 0px 0px
-
-			.block-profile__column-01
-				width: 215px
-				display: flex
-				flex-direction: column
-				row-gap: 22px
-
-				p
-					font-size: 24px
-					line-height: 26px
-					font-weight: 600
-					font-style: italic
-					color: var(--font-color-secondary)
-
-				.badge
-					width: 100%
-					display: flex
-					justify-content: center
-					align-items: center
-					column-gap: 5px
-
-					border: 4px solid var(--color-white)
-					border-radius: 36.5px
-
-					img
-						width: 34px
-
-					span
-						font-size: 36px
-						line-height: 49px
-						font-weight: 800
-						font-style: italic
-						color: var(--font-color-primary)
+				column-gap: 20px
 
 				a
 					text-decoration: none
-					text-align: center
 					font-size: 20px
-					line-height: 16px
-					font-weight: 800
-					font-style: italic
-					color: var(--font-color-primary)
+					font-weight: 500
+					color: var(--font-color-accent)
 
-					display: inline-block
-					width: 100%
-					background-color: var(--color-pink)
-					border-radius: 40px
-					padding: 15px 12px
-
-			.block-profile__column-02
-				flex: 1
-				display: flex
-				column-gap: 23px
-
-				.block-profile__card
-					width: 100%
-					height: 230px
-					padding: 24px 7px 24px 14px
 					position: relative
+					padding: 10px 0px
 
-					&.block-profile__card-01
-						max-width: 380px
-
-						.card
-							max-width: 380px
-
-							.footer
-								img
-									height: 70px
-
-					&.block-profile__card-02
-						max-width: 350px
-
-						.card
-							max-width: 350px
-
-							.footer
-								img
-									height: 70px
-
-					.card
+					&:before, &:after
+						content: ''
 						width: 100%
-						background-color: #A3DBF2
-						border-radius: 20px
+						height: 1.5px
+						background-color: var(--color-yellow)
 
 						position: absolute
-						top: 0px
+						bottom: 6px
 						left: 0px
-						z-index: 10
 
-						padding: 24px 7px 29px 14px
+					&::before
+						transform: scaleX(0)
+						transform-origin: left
+						transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+						transition-delay: .5s
 
-						.head
-							display: flex
-							align-items: center
-							column-gap: 14px
-							cursor: pointer
-
-							p
-								display: inline
-								font-size: 24px
-								line-height: 26px
-								font-weight: 600
-								font-style: italic
-								color: var(--font-color-secondary)
-
-							span
-								display: inline-block
-								width: 29px
-								height: 29px
-								background-color: var(--color-blue-dark)
-								border-radius: 50%
-								display: flex
-								justify-content: center
-								align-items: center
-
-								img
-									width: 14px
-									padding: 2px 0px 0px 0px
-
-						.body
-							margin: 10px 0px 20px 0px
-
-							& > p 
-								font-size: 16px
-								line-height: 20px
-								font-weight: 600
-								color: var(--font-color-secondary)
-
-								&.hidden
-									height: 0px
-									overflow: hidden
-
-							.block
-								height: auto
-								overflow: auto
-
-								&.hidden
-									height: 0px
-									overflow: hidden
-
-								p
-									font-size: 15px
-									line-height: 20px
-									font-weight: 600
-									color: var(--font-color-secondary)
-
-								.table
-									display: flex
-									flex-direction: column
-									margin: 15px 0px 10px 0px
-
-									.row
-										display: flex
-										border-bottom: 1px solid var(--color-blue-dark)
-										padding: 0px 3px 4px 3px
-										margin: 0px 0px 4px 0px
-
-										font-size: 15px
-										line-height: 20px
-										font-weight: 600
-										color: var(--font-color-secondary)
-
-										div
-											&:first-child
-												width: 40%
-											&:last-child
-												width: 60%
-
-						.footer
-							display: flex
-							align-items: flex-end
-							justify-content: space-between
-							column-gap: 4px
-
-							a
-								width: 100%
-								max-width: 216px
-								text-decoration: none
-								text-align: center
-								font-size: 20px
-								line-height: 16px
-								font-weight: 800
-								font-style: italic
-								color: var(--font-color-primary)
-
-								display: inline-block
-								background-color: var(--color-pink)
-								border-radius: 40px
-								padding: 15px 5px
+					&::after
+						transform: scaleX(0)
+						transform-origin: right
+						transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+						transition-delay: 0s
 
 
+					&:hover
 
-		.block-notification
+						&::before
+							transform: scaleX(0)
+							transform-origin: right
+							transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+							transition-delay: 0s
+
+						&:after
+							transform: scaleX(1)
+							transform-origin: left
+							transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+							transition-delay: .5s
+
+	.container-header__row-02
+		svg.container-header__title
 			width: 100%
-			position: relative
-			margin: 18px 0px 0px 0px
+			transition: all 0.5s ease 1.5s
+			transform: translateY(80px)
 
-			.notification
-				width: 1000%
-				height: auto
-				display: flex
+			path
+				fill: #808080
+				transition: all 0.8s ease 0s
+				transform: rotateX(-90deg)
+
+			&.active
+				transform: translateY(0px)
+
+				path
+					transform: rotateX(0deg)
+
+	.container-header__row-03
+		display: flex
+		flex-direction: column
+		row-gap: 35px
+
+		.container-header__subtitle
+			div
+				opacity: 0
+				overflow: hidden
+
+			h2
+				color: var(--font-color-secondary)
+				filter: invert(100%)
+				font-size: 54px
+				line-height: 66px
+				font-weight: 500
+				letter-spacing: -3px
+
+				transform: translateY(100%)
+
+			&.active
+				div
+					opacity: 1
+
+					h2
+						transform: translateY(0%)
+						transition: transform 1s ease, opacity 1s ease
+						transition-delay: 1.75s
+
+		.container-header__text
+			opacity: 0
+			overflow: hidden
+
+			p
+				display: inline-flex
 				align-items: center
 
-				border-radius: 37px
-				background-color: var(--color-blue-dark)
+				transform: translateY(100%)
 
-				padding: 17px 34px
+				svg	path
+					@include element_animation
+
+				a
+					color: var(--font-color-secondary)
+					filter: invert(100%)
+					font-size: 24px
+					line-height: 30px
+					font-weight: 400
+
+					text-decoration: none
+					position: relative
+					padding: 10px 0px
+
+					&:before, &:after
+						content: ''
+						width: 100%
+						height: 1.5px
+						background-color: var(--color-white)
+						filter: invert(100%)
+
+						position: absolute
+						bottom: 6px
+						left: 0px
+
+					&::before
+						transform: scaleX(1)
+						transform-origin: left
+						transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+						transition-delay: .5s
+
+					&::after
+						transform: scaleX(0)
+						transform-origin: right
+						transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+						transition-delay: 0s
+
+
+					&:hover
+						&::before
+							transform: scaleX(0)
+							transform-origin: right
+							transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+							transition-delay: 0s
+
+						&:after
+							transform: scaleX(1)
+							transform-origin: left
+							transition: transform .55s cubic-bezier(.785,.135,.15,.86)
+							transition-delay: .5s
+
+			&.active
+				opacity: 1
 
 				p
-					font-size: 20px
-					line-height: 27px
-					font-weight: 800
-					font-style: italic
-					color: var(--font-color-primary)
-
-					span
-						font-size: 32px
-						line-height: 27px
-						color: var(--color-pink)
-						padding: 0px 2px
-
-
-/* PROFILE SECTIONS STYLE SETTINGS END. */
+					transform: translateY(0%)
+					transition: transform 1s ease, opacity 1s ease
+					transition-delay: 1.75s
 
 
 
-/* PADDING SECTIONS STYLE SETTINGS START: */
 
-.landing
-	.section-header
-		padding: 0px 0px 200px 0px
 
-	.section-game
-		padding: 240px 0px 100px 0px
+.wrapper-preview
+	width: 100%
+	height: auto
 
-	.section-present
-		padding: 80px 0px 80px 0px
+.container-preview
+	position: relative
+	overflow: hidden
+	opacity: 0
 
-	.section-table
-		margin: 80px 0px 0px 0px
+	&.active
+		opacity: 1
+		transition: 1s ease
 
-	.section-questions
-		padding: 35px 0px 245px 0px
+	&.preview-mode
+		width: 540px
+		height: 350px
 
-	.section-footer
-		padding: 40px 0px 40px 0px
+		display: flex
+		flex-direction: column
+		row-gap: 12px
 
-.profile
-	.section-header
-		padding: 0px 0px 45px 0px
+		overflow: hidden
 
-	.section-present
-		padding: 100px 0px 80px 0px
+		position: absolute
+		top: 25%
 
-	.section-table
-		margin: 0px 0px 40px 0px
+		transition: 1.25s cubic-bezier(0.19, 1, 0.22, 1)
 
-/* PADDING SECTIONS STYLE SETTINGS END. */
+		.preview-frame
+			width: 100%
+			height: 100%
+
+			video
+				width: 100%
+				height: 100%
+				max-height: 760px
+
+				object-fit: cover
+				border-radius: 12px
+
+		.preview-caption
+			p
+				color: var(--font-color-secondary)
+				filter: invert(100%)
+				font-size: 20px
+				font-weight: 500
+

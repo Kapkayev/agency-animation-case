@@ -1,35 +1,126 @@
 @font-face {
-  font-family: "GT America";
-  src: local("GT Averica Thin"), local("GT Averica Thin"), url("../fonts/GT-America-LCGV-Compressed-Thin.woff2") format("woff2"), url("../fonts/GT-America-LCGV-Compressed-Thin.ttf") format("truetype");
-  font-weight: 200;
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Black.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
   font-display: fallback;
 }
 @font-face {
-  font-family: "GT America";
-  src: local("GT Averica Light"), local("GT Averica Light"), url("../fonts/GT-America-LCGV-Compressed-Light.woff2") format("woff2"), url("../fonts/GT-America-LCGV-Compressed-Light.ttf") format("truetype");
-  font-weight: 300;
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Bold.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
   font-display: fallback;
 }
 @font-face {
-  font-family: "Halvar";
-  src: local("Halvar Regular"), local("Halvar Regular"), url("../fonts/HalvarEng-Rg.woff2") format("woff2"), url("../fonts/HalvarEng-Rg.ttf") format("truetype");
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
 }
 @font-face {
-  font-family: "Halvar";
-  src: local("Halvar Light"), local("Halvar Light"), url("../fonts/HalvarEng-Lt.woff2") format("woff2"), url("../fonts/HalvarEng-Rg.ttf") format("truetype");
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-BookItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: fallback;
 }
 @font-face {
-  font-family: "Halvar Mittel";
-  src: local("Halvar Mittel Light"), local("Halvar Mittel Light"), url("../fonts/HalvarMittel-Lt.woff2") format("woff2"), url("../fonts/HalvarMittel-Lt.ttf") format("truetype");
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-LightItalic.otf") format("opentype");
   font-weight: 300;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Thin.otf") format("opentype");
+  font-weight: 200;
   font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-ThinItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-Ultralight.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: local("SuisseIntl"), url("../fonts/SuisseIntl-UltralightItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
   font-display: fallback;
 }
